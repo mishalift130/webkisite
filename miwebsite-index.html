@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<head>
+<style>
+body {
+  background-color: white;
+}
+.hero{
+
+height:600px;
+width: 100%;
+background-image: url("https://images.pexels.com/photos/68562/pexels-photo-68562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+background-position: center;
+background-size: cover;
+box-shadow:0 2px 3px 0 black;
+
+}
+.form-box{
+overflow:hidden;
+width: 380px;
+height: 550px;
+position: relative;
+margin: 6% auto;
+background:none;
+padding: 5px;
+top:5%;
+opcity:.50;
+}
+.form-box:hover {
+background: white;
+opacity:1;
+ box-shadow:0 2px 3px 0 black;
+ border-radius:2px;
+}
+.button-box{
+background:white;
+width: 220px;
+margin: 35px auto;
+position: relative;
+box-shadow: 0 0 10px 5px black;
+border-radius: 30px;
+}
+#btn{
+top: 0;
+left: 0;
+position: absolute;
+width: 110px;
+height: 100%;
+background: lightgreen;
+border-radius: 30px;
+transition: .5s;
+}
+.toggle-btn{
+padding: 10px 30px;
+cursor: pointer;
+background:transparent;
+border: 0;
+outline: none;
+position: relative;
+}
+.social-icons{
+margin: 30px auto;
+text-align: center;
+}
+.social-icons img{
+box-shadow:0 0 20px 0 black;
+margin:0 12px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.input-group{
+top: 180px;
+position: absolute;
+width: 280px;
+transition: .5s;
+}
+.input-field{
+width: 100%;
+padding: 10px 0;
+margin: 5px 0;
+border-left: 0;
+border-top: 0;
+border-right: 0;
+border-bottom: 1px solid darkblue;
+outline: none;
+background: transparent;
+}
+.submit-btn{
+font-size:20px;
+letter-spacing:3px;
+width: 85%;
+padding: 10px 30px;
+cursor: pointer;
+display: block;
+margin: auto;
+background: lightgreen;
+border: 0;
+outline: none;
+border-radius: 30px;
+}
+.chech-box{
+margin: 30px 10px 30px 0;
+}
+span{
+color: black;
+font-size: 15px;
+bottom: 64px;
+position: absolute;
+}
+#login{
+
+left: 50px;
+}
+#signin{
+left: 450px;
+}
+
+.menu {
+ top:0;
+
+ position:fixed;
+ margin-left:0;
+ width:100%;
+ height:50px;
+ background:lightgreen;
+ border-radius:8px;
+ font-size:0;
+ box-shadow:0 2px 3px 0 black;
+ z-index:1111;
+ }
+ .menu a {
+ letter-spacing:3px;
+ font-size:15px;
+  text-transform:uppercase;
+ text-decoration:none;
+ color:black;
+ line-height:50px;
+ position:relative;
+ z-index:1;
+ display:inline-block;
+ text-align:center;
+ }
+ .menu .anim {
+ height:100%;
+ top:0;
+ position:absolute;
+ width:100px;
+ z-index:0;
+ border-radius:8px;
+ background:white;
+ transition: all .5s ease 0s;
+ }
+.menu a:nth-child(1){
+ width:100px;
+ 
+ }
+ .menu .start-home,a:nth-child(1):hover~.anim {
+ width:100px;
+ left:0;
+
+ }
+.menu a:nth-child(2){
+ width:100px;
+ }
+ .menu .start-about,a:nth-child(2):hover~.anim {
+ width:100px;
+ left:100px;
+ }
+.menu a:nth-child(3){
+ width:105px;
+ }
+ .menu .start-blog,a:nth-child(3):hover~.anim {
+ width:105px;
+ left:205px;
+ }
+ 
+ .menu a:nth-child(4){
+ width:160px;
+ }
+  .menu .start-architict,a:nth-child(4):hover~.anim {
+ width:160px;
+ left:305px;
+ }
+.menu a:nth-child(5){
+ width:120px;
+ }
+ .menu .start-portfolio,a:nth-child(5):hover~.anim {
+ width:120px;
+ left:463px;
+ }
+ .menu a:nth-child(6){
+ width:120px;
+ }
+ .menu .start-contact,a:nth-child(6):hover~.anim {
+ width:120px;
+ left:587px;
+ }
+
+
+#logo  {
+
+
+padding-top:5%;
+width:30%;
+margin-left:35%;
+}
+#logo p{
+
+border-radius:4px;
+ box-shadow:0 2px 3px 0 black;
+height:60px;
+font-size:40px;
+letter-spacing:3px;
+background-image: linear-gradient(to right, #000080 , #000000);
+text-align:center;
+color:lime;
+}
+
+
+.search-box {
+box-shadow:0 2px 3px 0 black;
+width:300px;
+position:absolute;
+top:45%;
+left:50%;
+transform:translate(-50%,-50%);
+background-color:black;
+height:50px;
+border-radius:40px;
+padding:10px;
+}
+.search-btn {
+color:black;
+float:right;
+width:30px;
+height:30px;
+border-radius:50%;
+background-color:tomato;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+transition:.4s;
+}
+.search-txt {
+border:none;
+outline:none;
+background-color:black;
+padding:0;
+float:left;
+color:white;
+font-size:16px;
+transition:.4s;
+line-height:30px;
+width:0;
+}
+.search-box:hover > .search-txt{
+
+width:150px;
+padding:0 6px;
+}
+.search-box:hover > .search-btn{
+
+background:white;
+}
+ .logosrc {
+ height:350px;
+ width: 100%;
+background-image: url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+background-position: center;
+background-size: cover;
+box-shadow:0 2px 3px 0 black;
+ }     
+ .aimg {
+display:block;
+margin:auto;
+padding:auto;
+}
+.tme {
+text-align:center;
+font-family:The New Roman;
+}
+.tme h2 {
+padding:30px;
+letter-spacing:5px;
+}
+.ctct {
+height:200px;
+widht:100%;
+background:hsla(120,60%,70%,0.3);
+padding-top:2px;
+box-shadow:2px 0 3px 0 black;
+}
+.ctct h2 {
+letter-spacing:5px;
+text-align:center;
+font-size:30px;
+}
+.cpm {
+margin-left:10px;
+
+}
+
+.dcg {
+margin:auto;
+}
+
+
+
+
+.ptf {
+text-align:center;
+letter-spacing:5px;
+font-size:30px;
+padding:10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.blo {
+background:white;
+width:100%;
+height:30%;
+padding:30px;
+}
+.bog1  {
+float: left;
+width: 32%;
+padding: 20px;
+border:1px solid black;
+box-shadow:0 2px 3px 0 black;
+margin:5px;
+}
+.bog2  {
+float: left;
+width: 32%;
+padding: 20px;
+border:1px solid black;
+box-shadow:0 2px 3px 0 black;
+margin:5px;
+}
+.bog3  {
+float: left;
+width: 32%;
+padding: 20px;
+border:1px solid black;
+box-shadow:0 2px 3px 0 black;
+margin:5px;
+}
+.blo::after{
+content: "";
+  clear: both;
+  display: block;
+  
+}
+
+.bog1   p {
+  font-family: The New Roman;
+  background:#F5DEB3;
+  padding:5px;
+  margin:5px;
+  text-align:center;
+  
+  display:none;
+}
+.bog2   p {
+  font-family: The New Roman;
+  background:#F5DEB3;
+  padding:5px;
+  margin:5px;
+  text-align:center;
+  
+  display:none;
+}
+.bog3   p {
+  font-family: The New Roman;
+  background:#F5DEB3;
+  padding:5px;
+  margin:5px;
+  text-align:center;
+  
+  display:none;
+}
+
+
+ #pci{
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.artctpro {
+padding:10px;
+
+}
+
+.arpr {
+text-align:center;
+letter-spacing:5px;
+font-size:30px;
+padding:10px;
+}
+
+.arct {
+background:white;
+width:100%;
+height:30%;
+padding:30px;
+}
+/*
+.arct::after {
+content: "";
+  clear: both;
+  display:table;
+}
+*/
+
+#slideshow {
+display:block;
+margin-left:33%;
+
+}
+.tcure {
+box-shadow:0 2px 3px 0 black;
+border-radius:3px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="logosrc">
+<div>
+
+<nav class="menu">
+
+<a href="#loout">Home</a>
+<a href="#ame">About</a>
+<a href="#blog">Blogs</a>
+<a href="#ach">ARCHITICT</a>
+<a href="#plio" >Userinfo</a>
+<a href="#cout">Contact</a>
+<div class="anim start-home"></div>
+</nav>
+
+</div>
+
+
+<div id="logo">
+    <p><b><i>FRM.org</i></b></p>
+   </div> 
+<div class="search-box">
+
+<input class="search-txt" type="text"placeholder="Type to search">
+<a class="search-btn"href="#">
+<i class="fas fa-search"></i>
+</a>
+</div>
+
+</div>
+ 
+ 
+<div class="hero" id="plio">    
+<div class="form-box" id="loout">
+<div class="button-box">
+<div id="btn"></div>
+<button type="button" class="toggle-btn" onclick="login()">Log In</button>
+<button type="button" class="toggle-btn"onclick="signin()">Sign In</button>
+</div>
+
+
+<form id="login" class="input-group">
+<input type="text" class="input-field" placeholder="Type your User Id" required><br>
+<input type="text" class="input-field" placeholder="Enter Password"
+required><br>
+<input type="checkbox" class="chech-box"><span>Remember Password</span><br>
+<button type="submit" class="submit-btn">Log in</button>
+</form>
+<form id="signin" class="input-group">
+<input type="text" class="input-field" placeholder="Type your Firstname" required><br>
+<input type="text" class="input-field" placeholder="Type your Lastname" required><br>
+<input type="text" class="input-field" placeholder="Type your User Id" required><br>
+<input type="email" class="input-field" placeholder="Type your Email Id" required><br>
+<input type="text" class="input-field" placeholder="Enter Password"
+required><br>
+<input type="checkbox" class="chech-box"><span>I agree to the terms &
+conditions</span><br>
+<button type="submit" class="submit-btn">Sign In</button>
+</form>
+</div>
+
+
+</div>
+<div class="tme"id="ame">
+<h2>About Me</h2>
+<img src="https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"alt="me"width="800px"height="533px"class="aimg">
+<h3><b>I am Who I Am!</b></h3>
+<h4><i>With Passion For Real, Good Purpose</i></h4>
+<p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+
+</div>
+
+<div class="blo" >
+<h2 class="ptf">Portfolio</h2>
+<h3 class="ptf" id="blog">Blogs:</h3>
+<div class="bog1">        
+<a target="_blank" href="">
+<img src="https://images.pexels.com/photos/1083822/pexels-photo-1083822.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="beautiful orchid"width="80%" height="30%" id="pci"></a><br>
+<h3 id=""><b>ORCHID, MONEY FLOWER</b> </h3>
+<h5>Title descripction, Feb 24,2020</h5>
+<p > If you get one coin, buy something to satisfy your hunger. If you get two, then, my beloved, buy out some flowers by half. Yes, today the topic to discuss is flower , it would be tough to find someone who doesn't love flower , and when if it is Orchid , then there would be nothing to say .Orchid are famous from ancient time for mindblowing colour and beauty , flower  transforms from the bitop of the plant; which is very attractive and works as medium of the reproductive of the plant , they are placed   to be   the member of Orchidaceae family in the classification of plant, All over the world, even in frigid countries , they are seen to be born up.  Orchid found in temperate and hot areas are generally dependent and evergreen , they are born well in the place of extrem sunlight rather than place of shadow , That's why they are seen to be growing up under the branches of big trees , in winter their leaf fall down and in spring thw flowers grows up. The leaves of Orchid are simple, kind of alternate watery and allergic . There is a layer of glycerol on the leaf, therefore internal water cannot get out of the leaf. As a result, Orchid can survive in any condition . Economical importance: 1. Orchids are used in balconies to make the internal environment fresher . It has good market value in South Asian countries, 3. If we grow up these by genetical technology, we can export them and make foreign exchanges 4 .in many medical labs Orchid are used in curing many fatal diseases . 5. The perfume which is synthesised from Orchid can be used in Icecr.  
+        </p>
+</div>
+
+
+        
+<div class="bog2">        
+<img src="https://images.pexels.com/photos/752032/pexels-photo-752032.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="beautiful squirell"width="80%" height="30%"id="pci"><br>
+<h3 id="bs"><b>THE LIFE OF BROWN SQUIRRELS</b></h3>
+<h5>Title descripction, Feb 24, 2020</h5>        
+<p class="art">Expansion: South Asian countries such as: India, Nepal, Bhutan, Sri Lanka, China, Bangladesh and so on Brown squirrels are also seen in Myanmar. About them, they are seen everywhere, but in the mountain forests more can be seen.<br> 
+Temperament and habitat: The animal is calm but calm. In the presence of the species, his calm nature does not exist anymore. The antithesis begins and another fight to persecute. One if disturbed or in the presence of the same species Kind words like "Chip, Chip, Chip"; They usually live alone and are in pairs during the breeding season. The animal is on a tree (tree dweller) and creates habitat on both sides of the ground. They make a nesting place with leaves and straw in the dry.<br> 
+ Food: Brown squirrels are mainly omnivorous animals. During the day, they jump from tree to tree in search of food. But the body of those who can fly is a"Patagium membrane". Most squirrels can move from tree to tree in the process of gliding. There are almost all kinds of delicious fruits, including guava, betel nut, coconut, mango, jam, jackfruit, kamranga, almond, some of the leaves and bark of the tree are eaten as food. The bark also receives insects and their larvae as food.<br> 
+ Body description: Body size is about 20 cm. And the tail is up to 5 cm. Adult squirrels can weigh up to 5 grams. The animal has two pairs of legs in front and back. The back foot is taller than the front leg and is used for jumping. Feet 3-5 avuls, tendons and nails exist. They have different colors. The lamb is soft, shiny and the lower part of the body is white and gray. The eye color is black. Mate has 20 teeth.<br> 
+ Breeding and Lifetime: Up to 2-5 babies are born once a year but most babies die in the 5th year. Early on, children are limeless, blind and toothless. In newborns, mothers gradually become self-dependent through the care of squirrels for 2–3 months. Adult animals can survive for 3-5 years. <br> 
+Importance of maintaining the balance of nature: Every organism on earth has a specific position and importance in the natural food chain. Adapa brown cats are also no exception. They help in the creation of natural forests by seed dispersal. Some tribes eat their meat. They play a pivotal role in the spread of Shimul and coconut flowers. They keep the environment clean by eating harmful pesticides. The destruction of forests and today, this beast of conservation of natural balance is extinct due to the anesthesia of the nose. In order to sustain the animals in the natural environment, we need awareness.<br> 
+
+        </p>
+</div>
+
+
+<div class="bog3">
+<img src="https://images.pexels.com/photos/3871713/pexels-photo-3871713.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="beautiful chittagong"width="80%" height="30%"id="pci"><br>
+<h3 id="cc"><b>CHITTAGONIAN CULTURE</b></h3>
+<h5>Title descripction, Feb 24, 2020</h5>
+<p>I am in my early twenties and I have mostly stayed within the geographical boundary of Chittagong throughout my entire life. I was born in this landscape filled with fascinating cultures and colorful people. This could be the only place in the vast world where you won't find any diversity and hatred. Chittagong, known as the city of old and rich cultures for hundreds of years. An example of beauty, culture and hospitality is found here. This city is also world famous for its unique hospitality . For that reason, the city was called "Islamabad" by Mughal's.The chittagonian community is also known as "Chatgayya" . In this city, there are some unparalleled rules and lifestyle in culture. Let's know about the culture of Chittagong city. Chittagong is known as the Land of the Twelve Saints due to the prevalence of major Sufi Muslim shrines in the district. Historically, Sufism played an important role in the spread of Islam in the region. Prominent dargahs include the mausoleum of Shah Amanat and the shrine of Bayazid Bastami. The Bastami shrine hosts a pond of black softshell turtles.<br> 
+ The people of chittagonian community is followed by some unique characterized lifestyle ,art, values and habits .These cultural acts or arts are such as hospitality, Maijbhnadari song, seasonal Festival and Honour for elder and old citizens. Chattgayya represents their culture all over the country through some particular act.The "Chatgayya Mezban " is a felicitous example of hospitality. The word Mezban refers to a traditional party for hundreds of people who gather to join parties to eat traditional feast. This traditional feast is made with bangla recipes such as rice, beef with broth, Dals, etc. The immensely popular traditional feast Mezban is very famous all over the country.<br>  
+The people of Chittagong also celebrate seasonal festivals, especially winter and summer. In winter, the whole chittagong is furious to celebrate the winter festival with traditional rice cakes.The "Rice cake" is made with rice, sweets and coconut. It is eaten with date juice. When any visitor comes to Chittagong during winter, he is welcomed by that traditional rice cake. Honey-Rice is another awesome traditional food which is made with rice, milk, coconut etc. Fan palm cake is also a traditional food .<br>  
+The peoples of Chittagong are very well mannered and abundant. They always respect their elderly brothers, grandfather, grandmother, senior citizens, especially their neighbors. Before weeding, the groom and bride side discuss some important topics and rules of weeds which must have to follow both the groom and the bride's side . This system is called "panchalla". There is another rule or system in weeding which has to follow the bride's side. The system is like that. The bride side has to send seasonal food, fruits and festive meals.In reply, the groom side is the same.<br>  
+Maizbhandari Gan mystic folk songs of the Maizbhandari cult, started in Chittagong about a century ago by Syed Ahmadullah (1826-1906), a resident of the village of Maizbhandar under Fatikchhari in Chittagong. He and his followers used to assemble at Maizbhandar to practise mystic rites and sing spiritual songs. The cult became known as Maizbhandari and the songs as Maizbhandari songs. Maizbhandari songs praise Allah, the Prophet Muhammad (Sm), and Muslim saints and pairs. The songs are about love for humanity, morality, non-communalism and divine love. Maizbhandari songs have spread beyond Chittagong and are now also sung by singers who are not followers of the cult in different cultures.There are also some local songs which are sung in Chittagong, the local language.<br>  
+
+        </p>
+</div>
+
+<div class="artctpro">
+<div class="arct" >
+<h3 class="arpr" id="ach">Architect Projects: </h3>
+<div id="slideshow">
+<img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="House" style="width:48%" class="tcure">
+
+<img src="https://images.pexels.com/photos/323776/pexels-photo-323776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="House" style="width:48%" class="tcure">
+
+<img src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="House" style="width:48%" class="tcure">
+
+
+<img src="https://images.pexels.com/photos/2893177/pexels-photo-2893177.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="House" style="width:48%" class="tcure">
+</div>
+</div>
+</div>
+
+</div>
+
+
+<div class="ctct" id="cout">
+<h2>CONTACT</h2>
+<div class="cpm">
+<p><i class="fa fa-map-marker" aria-hidden="true" ></i> Chittagong, BD</i></p>
+<p><i class="fa fa-phone-square" aria-hidden="true"></i> +99034873</i></p>
+<p><i class="fa fa-envelope" aria-hidden="true"></i> frm.org130@G-mail.com</i></p></div>
+</div>
+<script>
+var x = document.getElementById("login");
+var y = document.getElementById("signin");
+var z = document.getElementById("btn");
+function signin() {
+x.style.left = "-400px";
+y.style.left = "50px";
+z.style.left = "110px";
+}
+function login() {
+x.style.left = "50px";
+y.style.left = "450px";
+z.style.left = "0"; 
+}
+</script>
+<script>
+/**
+ * This function takes in a reference to a DOM element,
+ * assumes each of its children are <img> tags,
+ * and then makes a simple slideshow out of the images.
+ * @param container A DOM element
+ */
+var slideShow = function(container) {
+    this.images = [];
+    this.curImage = 0;
+    for (i = 0; i < container.childElementCount; i++) {
+        this.images.push(container.children[i]);
+        this.images[i].style.display = "none";
+    }
+    
+    // Handle going to to the next slide
+    var nextSlide = function() {
+        for (var i = 0; i < this.images.length; i++) {
+            this.images[i].style.display = "none";
+        }
+        this.images[this.curImage].style.display = "block";
+        this.curImage++;
+        if (this.curImage >= this.images.length) {
+            this.curImage = 0;
+        }
+        window.setTimeout(nextSlide.bind(this), 1000);
+    };
+    
+    nextSlide.call(this);
+};
+slideShow(document.getElementById("slideshow"));
+</script>
+</body>
+</html>
